@@ -1,0 +1,27 @@
+{
+  "name": "power-solid-erp",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host --port 3000",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host --port 3000"
+  },
+  "dependencies": {
+    "lucide-react": "^0.542.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.8.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.12",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "tailwindcss": "^4.1.12",
+    "typescript": "~5.9.2",
+    "vite": "^8.2.0"
+  }
+}

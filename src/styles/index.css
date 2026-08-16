@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Archivo", "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans", "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "IBM Plex Sans Arabic", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-charcoal: #111317;
+  --color-nav: #17191c;
+  --color-gold: #d2ab66;
+  --color-gold-deep: #b88e48;
+  --color-canvas: #f5f6f8;
+  --color-surface: #ffffff;
+  --color-surface-2: #eef1f4;
+  --color-ink: #17191c;
+  --color-muted: #59616a;
+  --color-line: #d9dee4;
+  --color-success: #1f7a4d;
+  --color-success-bg: #e8f6ee;
+  --color-warning: #a15c12;
+  --color-warning-bg: #fbf0e0;
+  --color-danger: #b42318;
+  --color-danger-bg: #fdecea;
+  --color-info: #175cd3;
+  --color-info-bg: #e8f0fe;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+
+  --shadow-panel: 0 1px 2px rgba(17, 19, 23, 0.06);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+html[dir="rtl"] body {
+  font-family: var(--font-arabic);
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] .font-heading {
+  font-family: var(--font-arabic);
+  letter-spacing: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.erp-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #c5ccd4 transparent;
+}
+
+.erp-table-wrap {
+  overflow: auto;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+}
+
+.erp-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+}
+
+.erp-table th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--color-surface-2);
+  color: var(--color-muted);
+  font-weight: 600;
+  font-size: 12px;
+  text-align: start;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-line);
+  white-space: nowrap;
+}
+
+.erp-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--color-line);
+  vertical-align: middle;
+  color: var(--color-ink);
+}
+
+.erp-table tbody tr:hover td {
+  background: #fafbfc;
+}
+
+.erp-table tbody tr[data-selected="true"] td {
+  background: #f7f1e6;
+}
+
+.erp-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.erp-sheet th,
+.erp-sheet td {
+  min-width: 64px;
+  text-align: center;
+  padding: 6px 8px;
+}
+
+.erp-sheet th:first-child,
+.erp-sheet td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  text-align: start;
+  min-width: 220px;
+  background: var(--color-surface);
+}
+
+.erp-sheet th:first-child {
+  z-index: 3;
+  background: var(--color-surface-2);
+}
+
+.erp-sheet td[data-code="A"],
+.erp-sheet td[data-code="SICK"] {
+  background: var(--color-danger-bg);
+}
+
+.erp-sheet td[data-code="OFF"],
+.erp-sheet td[data-code="H"] {
+  background: var(--color-surface-2);
+  color: var(--color-muted);
+}
+
+.erp-sheet td[data-code="L"] {
+  background: var(--color-info-bg);
+}
+
+.erp-sheet .cell-selected {
+  outline: 2px solid var(--color-gold);
+  outline-offset: -2px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.drawer-enter {
+  animation: fade-in 180ms ease;
+}
